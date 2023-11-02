@@ -1,0 +1,8 @@
+[appflowy]
+appflowy ansible_host=192.168.33.11
+
+[rocketchat_react_native]
+rocketchat_react_native ansible_host=192.168.33.12
+
+[rocketchat]
+rocketchat ansible_host=192.168.33.13

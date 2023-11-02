@@ -1,0 +1,25 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "appflowy" do |appflowy|
+    appflowy.vm.box = "ubuntu/bionic64"
+    appflowy.vm.network "private_network", type: "dhcp"
+    appflowy.vm.provision "ansible" do |ansible|
+      ansible.playbook = "ansible/appflowy_playbook.yml"
+    end
+  end
+
+  config.vm.define "rocketchat_react_native" do |react_native|
+    react_native.vm.box = "ubuntu/bionic64"
+    react_native.vm.network "private_network", type: "dhcp"
+    react_native.vm.provision "ansible" do |ansible|
+      ansible.playbook = "ansible/rocketchat_react_native_playbook.yml"
+    end
+  end
+
+  config.vm.define "rocketchat" do |rocketchat|
+    rocketchat.vm.box = "ubuntu/bionic64"
+    rocketchat.vm.network "private_network", type: "dhcp"
+    rocketchat.vm.provision "ansible" do |ansible|
+      ansible.playbook = "ansible/rocketchat_playbook.yml"
+    end
+  end
+end

@@ -1,0 +1,11 @@
+- hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Include Appflowy playbook
+      import_playbook: appflowy_playbook.yml
+
+    - name: Include RocketChat React Native playbook
+      import_playbook: rocketchat_react_native_playbook.yml
+
+    - name: Include RocketChat playbook
+      import_playbook: rocketchat_playbook.yml

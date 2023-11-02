@@ -1,0 +1,23 @@
+---
+- name: Configure and deploy Appflowy
+  hosts: appflowy
+  become: yes
+  tasks:
+    - name: Install required packages for Appflowy
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - nginx
+        - mysql-server
+        - php-fpm
+        # Add other required packages
+
+    - name: Configure Nginx for Appflowy
+      template:
+        src: templates/appflowy/nginx.conf.j2
+        dest: /etc/nginx/sites-available/appflowy
+      notify:
+        - Reload Nginx
+
+

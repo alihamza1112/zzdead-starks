@@ -1,0 +1,5 @@
+---
+roles:
+  - name: geerlingguy.nginx
+    src: geerlingguy.nginx
+    version: v4.0.3
