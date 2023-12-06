@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 FROM node:14
 WORKDIR /app
 RUN git clone https://github.com/RocketChat/Rocket.Chat.git /app
 RUN npm install
 EXPOSE 3000
 CMD ["node", "main.js"]
+=======
+FROM node:14
+WORKDIR /app
+RUN git clone https://github.com/RocketChat/Rocket.Chat.git /app
+RUN npm install
+EXPOSE 3000
+CMD ["node", "main.js"]
+>>>>>>> 6976111cef638626fddcd1f4ba6c71eb5100e141
